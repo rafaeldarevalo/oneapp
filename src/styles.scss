@@ -1,1 +1,362 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+.bold {
+  font-weight: 700;
+}
+
+.title1 {
+  font-size: 36px;
+}
+
+.title2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.title3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.smaller {
+  font-size: 10px;
+}
+
+h1 {
+  line-height: 36px;
+  margin: 0;
+}
+
+h2 {
+  line-height: 28px;
+  margin: 0;
+}
+
+h3 {
+  line-height: 22px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+$colors: (
+  primary: #4B4B4B,
+  primary-dark: #000000,
+  primary-light: #ffffff,
+  secondary: #eaeaea,
+  accent: #009CFF
+);
+
+/* Reset */
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+}
+
+input, textarea, button {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: map-get($colors, primary);
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: map-get($colors, primary-dark);
+  color: map-get($colors, primary);
+  font-size: 16px;
+  height: 100vh
+}
+
+.container {
+  background: map-get($colors, secondary);
+  border-radius: 30px 30px 0 0;
+  padding: 30px 20px;
+  min-height: 600px;
+  margin-bottom: 80px;
+}
+
+/*Header*/
+
+.header {
+  color: map-get($colors, secondary);
+  padding: 0 20px;
+  display: flex;
+  height: 140px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 60%;
+}
+
+.header__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  background: map-get($colors, primary-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: map-get($colors, primary);
+}
+
+.header__wellcome {
+  padding: 20px 30px;
+  color: map-get($colors, primary-light);
+}
+
+svg {
+  width: 100%;
+}
+
+.card {
+  background: map-get($colors, primary-light);
+  border-radius: 16px;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+}
+
+/*Inbox*/
+
+
+.inbox__status {
+  @extend .card;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.inbox__status__number {
+  background: map-get($colors, accent);
+  width: 100px;
+  height: 70px;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: map-get($colors, secondary);
+  margin-top: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+
+
+}
+
+.inbox__search {
+  @extend .card;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 85% 15%;
+
+  & input {
+    width: 100%;
+    padding-right: 60px;
+  }
+
+  & button {
+    background: map-get($colors, accent);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+}
+
+
+/*Inbox*/
+
+.inbox__messages {
+  @extend .card;
+  padding: 10px;
+}
+
+.inbox__item {
+  display: grid;
+  grid-template-columns: 10%  60% 15% 15%;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.inbox__date {
+  color: map-get($colors, accent);
+}
+
+.inbox__check-on {
+  border: 2px solid map-get($colors, accent);
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+/*Footer*/
+
+.footer {
+  display: flex;
+  width: 100%;
+  color: map-get($colors, primary-light);
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: map-get($colors, primary-dark);
+}
+
+/*Admin*/
+.header-admin {
+  @extend .header;
+  justify-content: center;
+}
+
+/*Upload*/
+
+.input {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.textarea {
+  @extend .input;
+  height: 100px;
+}
+
+.btn {
+  background: map-get($colors, accent);
+  color: #fff;
+  border-radius: 50px;
+  width: 80%;
+  text-transform: uppercase;
+  line-height: 53px;
+  margin-left: 10%;
+  display: block;
+  text-align: center;
+}
+.btn--dark{
+  background: #302E38;
+}
+
+/*Login*/
+
+.forgot {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+
+.component {
+  margin-top: 30px;
+}
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.danger {
+  color: red;
+  margin-left: 15px;
+}
+
+.authotize {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin:10px 0 30px 0;
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+
+}
+.modal__content {
+  background: #fff;
+  padding: 50px;
+  width: 80vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+  position: relative;
+}
+.modal__action{
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  .btn{
+    width: 90%;
+    margin: 0;
+    margin: 0 auto;
+  }
+}
+.input-resent{
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+.close{
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+}
+.name{
+  color: #fff;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+.authotize-items{
+  list-style: none;
+  margin: 30px 0 0 0;
+  padding: 0;
+  li{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+.document{
+  margin-bottom: 30px;
+}

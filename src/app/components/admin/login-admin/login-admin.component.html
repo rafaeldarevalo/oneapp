@@ -1,0 +1,13 @@
+<app-admin-header></app-admin-header>
+<div class="container">
+  <h2 class="title3">Login</h2>
+  <div class="component">
+    <form>
+      <input class="input" type="text" placeholder="E-mail">
+      <input class="input" type="text" placeholder="Password">
+      <button class="btn"  [routerLink]="['/upload']">Login</button>
+    </form>
+  </div>
+  <a  class="forgot bold" >Forgot password?</a>
+  <a class="btn" [routerLink]="['/register']">Register</a>
+</div>
